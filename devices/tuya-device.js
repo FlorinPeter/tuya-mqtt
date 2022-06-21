@@ -645,7 +645,7 @@ class TuyaDevice {
     // Publish MQTT
     publishMqtt(topic, message, isDebug) {
         if (isDebug) { debugState(topic, message) }
-        this.mqttClient.publish(topic, message, { qos: 1 });
+        this.mqttClient.publish(topic, message, { qos: 1 , retain: true});
     }
 }
 
